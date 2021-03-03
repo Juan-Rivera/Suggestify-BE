@@ -14,7 +14,7 @@ exports.up = function(knex) {
         tbl.string('artist', 255).notNullable()
         tbl.string('title', 255).notNullable()
         tbl.string('song_id', 255).notNullable()
-        tbl.integer('user_id').unsigned().notNullable().references('users.id')
+        tbl.integer('user_id').unsigned().notNullable().references('users.id').onDelete('CASCADE').onUpdate('CASCADE')
         })
 };
 

@@ -9,8 +9,10 @@ server.use(cors());
 server.use(express.json());
 
 const authRouter = require('./auth/authRouter');
+const songRouter = require('./savedSongs/savedSongsRouter');
 
 server.use('/api/auth', authRouter);
+server.use('/api/songs', songRouter);
 
 server.get('/', (req, res) => {
     res.send('Server is running');
